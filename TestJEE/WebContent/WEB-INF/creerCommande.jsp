@@ -13,13 +13,11 @@
 	<c:import url="/inc/menu.jsp" />
 	<div>
 		<form method="post" action="<c:url value="/creationCommande"/>">
-			<fieldset>
-				<legend>Informations client</legend>
-				<c:import url="/inc/inc_commande_form.jsp" />
-			</fieldset>
-			<p class="info">${ form.resultat }</p>
-			<input type="submit" value="Valider" /> <input type="reset"
-				value="Remettre à zéro" /> <br />
+
+
+			<c:import url="/inc/inc_commande_form.jsp" />
+
+			
 		</form>
 	</div>
 </body>

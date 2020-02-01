@@ -10,6 +10,10 @@
 </head>
 <body>
 	<p>
+		 <c:import url="/inc/menu.jsp" />
+		 
+		    <c:import url="/inc/inc_client_form.jsp" />
+		    
 		<c:out value="${ message }" />
 	</p>
 	<p>Nom : ${ client.nom }</p>

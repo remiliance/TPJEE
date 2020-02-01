@@ -1,13 +1,17 @@
 package com.servlets;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.beans.Client;
+import com.beans.Commande;
 import com.forms.CreationClientForm;
 
 public class CreationClient extends HttpServlet {
@@ -33,6 +37,7 @@ public class CreationClient extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  /* Préparation de l'objet formulaire */
         CreationClientForm form = new CreationClientForm();
+        
 
         /* Traitement de la requête et récupération du bean en résultant */
         Client client = form.creerClient( request );
@@ -40,6 +45,21 @@ public class CreationClient extends HttpServlet {
         /* Ajout du bean et de l'objet métier à l'objet requête */
         request.setAttribute( ATT_CLIENT, client );
         request.setAttribute( ATT_FORM, form );
+        
+        HttpSession session = request.getSession();
+          
+        Map<String, Client> clients = (HashMap<String, Client>) session.getAttribute( "clients" );
+        
+        /* Si aucune map n'existe, alors initialisation d'une nouvelle map */
+        if ( clients == null ) {
+            clients = new HashMap<String, Client>();
+        }
+        /* Puis ajout du client courant dans la map */
+        clients.put( client.getNom(), client );
+        /* Et enfin (ré)enregistrement de la map en session */
+        session.setAttribute( "clients", clients );
+
+        
 
         if ( form.getErreurs().isEmpty() ) {
             /* Si aucune erreur, alors affichage de la fiche récapitulative */

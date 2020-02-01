@@ -9,7 +9,7 @@ import com.beans.Client;
 
 public class CreationClientForm {
 
-	 private static final String CHAMP_NOM       = "nomClient";
+		private static final String CHAMP_NOM       = "nomClient";
 	    private static final String CHAMP_PRENOM    = "prenomClient";
 	    private static final String CHAMP_ADRESSE   = "adresseClient";
 	    private static final String CHAMP_TELEPHONE = "telephoneClient";
