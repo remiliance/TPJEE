@@ -32,6 +32,14 @@
 		<servlet-class>com.servlets.CreationCommande</servlet-class>
 	</servlet>
 	
+	<servlet>
+	<servlet-name>Restriction</servlet-name>
+	<servlet-class>com.servlets.Restriction</servlet-class>
+	</servlet>
+	
+	
+	
+	
 	<servlet-mapping>
 		<servlet-name>CreationClient</servlet-name>
 		<url-pattern>/creationClient</url-pattern>
@@ -79,7 +87,19 @@
         <url-pattern>/suppressionClient</url-pattern>
     </servlet-mapping>
     
+    <servlet-mapping>
+	<servlet-name>Restriction</servlet-name>
+	<url-pattern>/restriction</url-pattern>
+	</servlet-mapping>
     
-	
+<filter>
+	<filter-name>RestrictionFilter</filter-name>
+	<filter-class>com.filters.RestrictionFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>RestrictionFilter</filter-name>
+	<url-pattern>/restreint/*</url-pattern>
+</filter-mapping>
+
 	
 </web-app>
