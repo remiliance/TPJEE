@@ -3,13 +3,41 @@ package com.beans;
 
 public class Client {
     /* Propriétés du bean */
-    public String nom;
+    private Long id;
+	public String nom;
     private String prenom;
     private String adresse;
-    private String telephone;
-    private String email;
+   
+        public Long getId() {
+		return id;
+	}
 
-    public void setNom( String nom ) {
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	private String telephone;
+    private String email;
+    private String image;
+
+
+    public String getCheminPhoto() {
+		return image;
+	}
+
+	public void setCheminPhoto(String cheminPhoto) {
+		image = cheminPhoto;
+	}
+
+	public void setNom( String nom ) {
         this.nom = nom;
     }
 

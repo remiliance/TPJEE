@@ -23,8 +23,8 @@ public class Restriction extends HttpServlet {
 	    	
 	    	HttpSession session = request.getSession();
 	    	String toto = "Je suis Toto";
-	    	//session.setAttribute( ATT_SESSION_USER , toto );
-	    	session.setAttribute( ATT_SESSION_USER , null );
+	    	session.setAttribute( ATT_SESSION_USER , toto );
+	    	//session.setAttribute( ATT_SESSION_USER , null );
 	        /*
 	         * Si l'objet utilisateur n'existe pas dans la session en cours, alors
 	         * l'utilisateur n'est pas connecté.

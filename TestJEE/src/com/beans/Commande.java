@@ -2,15 +2,26 @@ package com.beans;
 
 public class Commande {
     /* Propriétés du bean */
-    private Client client;
+    private Long id;
+	private Client client;
     private String date;
     private Double montant;
     private String modePaiement;
     private String statutPaiement;
     private String modeLivraison;
     private String statutLivraison;
+    
+    
 
-    public Client getClient() {
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Client getClient() {
         return client;
     }
 

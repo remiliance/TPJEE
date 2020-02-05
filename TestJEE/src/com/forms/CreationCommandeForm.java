@@ -43,6 +43,9 @@ import com.beans.Commande;
 	         * suffit de passer la requête courante à l'objet métier existant et de
 	         * récupérer l'objet Client créé.
 	         */
+	    	
+	    	
+	    	
 	        CreationClientForm clientForm = new CreationClientForm();
 	        Client client = clientForm.creerClient( request );
 	        

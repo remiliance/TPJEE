@@ -53,10 +53,10 @@ public class RestrictionFilter implements Filter {
          */
         if ( session.getAttribute( ATT_SESSION_USER ) == null ) {
             /* Redirection vers la page publique */
-            ((HttpServletResponse) response).sendRedirect( ((HttpServletRequest) request).getContextPath() + ACCES_PUBLIC );
+        //    ((HttpServletResponse) response).sendRedirect( ((HttpServletRequest) request).getContextPath() + ACCES_PUBLIC );
         } else {
             /* Affichage de la page restreinte */
-            chain.doFilter( request, response );
+          //  chain.doFilter( request, response );
         }
 	}
 
